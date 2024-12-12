@@ -51,7 +51,7 @@ const Header = () => {
                 </div>
                 <div className="navbar-end space-x-3">
                     <Link to={'/'}>Post a Job</Link>
-                    <Link to={'/'} className="">LogIn</Link>
+                    <Link to={'/login'} className="">LogIn</Link>
                     <div className="dropdown dropdown-end">
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
