@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../prodivers/AuthProviders";
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, handleSSignOut } = useContext(AuthContext);
 
     const links = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
@@ -53,7 +53,7 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-3">
-                    <Link to={'/'}>Post a Job</Link>
+
                     {user ?
                         <div className="dropdown dropdown-end">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
@@ -74,7 +74,8 @@ const Header = () => {
                                 </li>
                                 <li><a>Dashboard</a></li>
                                 <li><a>Settings</a></li>
-                                <li><a>Logout</a></li>
+                                <li><Link to={'/'}>Post a Job</Link></li>
+                                <li><button onClick={handleSSignOut}>Logout</button></li>
                             </ul>
                         </div> :
                         <Link to={'/login'} className="">LogIn</Link>

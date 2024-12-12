@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../prodivers/AuthProviders";
+import { updateProfile } from "firebase/auth";
+import auth from "../firebase/firebase.init";
 
 const Register = () => {
     const {createUser} = useContext(AuthContext)
@@ -16,9 +18,16 @@ const Register = () => {
 
         createUser(email, password)
         .then(() => {
-            console.log('Account created successfully');
-            navigate('/')
-
+            updateProfile(auth.currentUser, {
+                displayName: name
+            })
+            .then(() => {
+                // console.log('Account created successfully');
+                navigate('/')
+            })
+            .catch(()=> {
+                // console.log('User can not update')
+            })
         })
         .catch(error => {
             console.log(error.message)
