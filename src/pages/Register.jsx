@@ -1,13 +1,38 @@
-import { Link } from "react-router";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../prodivers/AuthProviders";
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handleRegisterForm = e => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, email, password)
+
+        createUser(email, password)
+        .then(() => {
+            console.log('Account created successfully');
+            navigate('/')
+
+        })
+        .catch(error => {
+            console.log(error.message)
+        })
+
+    }
+
     return (
         <div className="w-1/4 mx-auto min-h-[calc(100vh-288px)] flex flex-col justify-center">
             <div className="text-center mb-10">
                 <h2 className="text-4xl">Hi, Welcome Back!</h2>
-                <p>Have an account? <Link to={'/login'}><button className="underline">Sign up</button></Link></p>
+                <p>Have an account? <Link to={'/login'}><button className="underline">Log In</button></Link></p>
             </div>
-            <form className="space-y-3">
+            <form onSubmit={handleRegisterForm} className="space-y-3">
                 <label className="input input-bordered flex items-center gap-2">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +42,7 @@ const Register = () => {
                         <path
                             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
                     </svg>
-                    <input type="text" name="username" className="grow" placeholder="Username" />
+                    <input type="text" name="name" className="grow" placeholder="Name" />
                 </label>
                 <label className="input input-bordered flex items-center gap-2">
                     <svg
