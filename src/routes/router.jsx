@@ -8,6 +8,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Jobs from "../pages/Jobs";
 import Contact from "../pages/Contact";
+import PostAJob from "../pages/PostAJob";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact></Contact>
+            },
+            {
+                path: '/postajob',
+                element: <PostAJob></PostAJob>
             }
         ]
     },
