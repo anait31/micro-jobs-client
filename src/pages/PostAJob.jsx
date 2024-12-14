@@ -41,7 +41,7 @@ const PostAJob = () => {
                             <input type="text" placeholder="Job Title" className="input input-bordered w-full focus:outline-none" required />
                         </div>
                         <div className="md:flex md:gap-3">
-                            <input type="number" placeholder="Amount" name="amount" className="input w-1/2 input-bordered w-full focus:outline-none" required />
+                            <input type="number" placeholder="Amount" name="amount" className="input w-1/2 input-bordered focus:outline-none" required />
                             {/* <input type="text" placeholder="Job Title" name="" className="input input-bordered w-full focus:outline-none" required /> */}
                             <DatePicker className="w-full block" selected={startDate} onChange={(date) => setStartDate(date)}></DatePicker>
                         </div>
