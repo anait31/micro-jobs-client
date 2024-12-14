@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import Jobs from "../pages/Jobs";
 import Contact from "../pages/Contact";
 import PostAJob from "../pages/PostAJob";
+import JobDetails from "../pages/JobDetails";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,11 @@ const router = createBrowserRouter([
             {
                 path: '/jobs',
                 element: <Jobs></Jobs>
+            },
+            {
+                path: '/jobs/:id',
+                element: <JobDetails></JobDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
             },
             {
                 path: '/contact',

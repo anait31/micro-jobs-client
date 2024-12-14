@@ -1,8 +1,9 @@
+import { Link } from "react-router";
 
 const JobCard = ({job}) => {
-    const {category, job_title} = job || {}
+    const {category, job_title, _id} = job || {}
     return (
-        <div>
+        <Link to={`/jobs/:${_id}`}>
             <div className="w-full max-w-sm px-4 py-3 bg-white rounded-md shadow-md dark:bg-gray-800">
                 <div className="flex items-center justify-between">
                     <span className="text-sm font-light text-gray-800 dark:text-gray-400">{category}</span>
@@ -39,7 +40,7 @@ const JobCard = ({job}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 
