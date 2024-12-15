@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router";
+import { AuthContext } from "../prodivers/AuthProviders";
 
 const JobDetails = () => {
-    
+const {user} = useContext(AuthContext)
     const job = useLoaderData()
     console.log(job)
+    const { buyer_email, category, deadline, description, job_title, price } = job
 
     return (
         <div className="flex gap-8 container mx-auto justify-between items-center p-16">
@@ -11,22 +14,22 @@ const JobDetails = () => {
                 <div className="max-w-2xl overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
                     <img className="object-cover w-full h-64" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article" />
 
-                    <div className="p-6">
-                        <div>
-                            <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">Product</span>
-                            <a href="#" className="block mt-2 text-xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline" tabindex="0" role="link">I Built A Successful Blog In One Year</a>
-                            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie parturient et sem ipsum volutpat vel. Natoque sem et aliquam mauris egestas quam volutpat viverra. In pretium nec senectus erat. Et malesuada lobortis.</p>
+                    <div className="p-6 space-y-6">
+                        <div className="space-y-3">
+                            <div className="flex justify-between">
+                                <p className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">{category}</p>
+                                <p className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">Deadline: {deadline}</p>
+                            </div>
+                            <h2 className="text-2xl font-medium text-blue-600 uppercase dark:text-blue-400">{job_title}</h2>
+                            <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{description}</p>
                         </div>
 
                         <div className="mt-4">
-                            <div className="flex items-center">
-                                <div className="flex items-center">
-                                    <img className="object-cover h-10 rounded-full" src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60" alt="Avatar" />
-                                    <a href="#" className="mx-2 font-semibold text-gray-700 dark:text-gray-200" tabindex="0" role="link">Jone Doe</a>
-                                </div>
-                                <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">21 SEP 2015</span>
-                            </div>
+                            <h3>Buyer Details</h3>
+                            <p className="mx-1 text-xs text-gray-600 dark:text-gray-300">Name: Example</p>
+                            <p className="mx-1 text-xs text-gray-600 dark:text-gray-300">Email: {buyer_email}</p>
                         </div>
+                        <h3>Price: {price}</h3>
                     </div>
                 </div>
             </div>
@@ -35,28 +38,28 @@ const JobDetails = () => {
                 <form>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                         <div>
-                            <label className="text-gray-700 dark:text-gray-200" for="username">Price</label>
+                            <label className="text-gray-700 dark:text-gray-200">Price</label>
                             <input id="username" type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
 
                         <div>
-                            <label className="text-gray-700 dark:text-gray-200" for="emailAddress">Email Address</label>
-                            <input id="emailAddress" type="email" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
+                            <label className="text-gray-700 dark:text-gray-200">Email Address</label>
+                            <input id="emailAddress" defaultValue={user.email} type="email" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
 
                         <div>
-                            <label className="text-gray-700 dark:text-gray-200" for="password">Comment</label>
+                            <label className="text-gray-700 dark:text-gray-200">Comment</label>
                             <input id="password" type="password" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
 
                         <div>
-                            <label className="text-gray-700 dark:text-gray-200" for="passwordConfirmation">Deadline</label>
+                            <label className="text-gray-700 dark:text-gray-200">Deadline</label>
                             <input id="passwordConfirmation" type="password" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
                     </div>
 
                     <div className="flex justify-end mt-6">
-                        <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Save</button>
+                        <button className="px-8 py-2.5 leading-5 text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">Request</button>
                     </div>
                 </form>
             </div>

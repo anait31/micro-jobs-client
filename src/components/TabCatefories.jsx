@@ -6,7 +6,7 @@ const TabCatefories = ({ jobs }) => {
     return (
         <Tabs>
             <div className='container mx-auto py-16'>
-                <div className='flex justify-center items-center'>
+                <div className='flex justify-center items-center mb-12'>
                     <TabList>
                         <Tab>Image Annotation</Tab>
                         <Tab>Video Transcription</Tab>
