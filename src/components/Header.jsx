@@ -11,8 +11,12 @@ const Header = () => {
         <li><NavLink to={'/contact'}>Contact</NavLink></li>
     </>
 
+    const activeLinkStype = {
+        
+    }
+
     return (
-        <div className="bg-[#244034] text-white px-4 md:px-12">
+        <div className="px-4 md:px-12">
             <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -33,19 +37,11 @@ const Header = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            {/* <li><a>Item 1</a></li>
-                            <li>
-                                <a>Parent</a>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>Item 3</a></li> */}
+                            
                             {links}
                         </ul>
                     </div>
-                    <a className="text-xl">SpareJobs</a>
+                    <Link to={'/'} className="text-xl">SpareJobs</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-3">
@@ -55,7 +51,7 @@ const Header = () => {
                 <div className="navbar-end space-x-3">
 
                     {user ?
-                        <div className="dropdown dropdown-end">
+                        <div className="dropdown dropdown-end z-50">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <img
@@ -65,7 +61,7 @@ const Header = () => {
                             </div>
                             <ul
                                 tabIndex={0}
-                                className="menu menu-sm dropdown-content bg-black rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                className="menu menu-sm dropdown-content bg-white rounded-box z-[1] mt-3 w-52 p-2 shadow">
                                 <li>
                                     <a className="justify-between">
                                         Profile

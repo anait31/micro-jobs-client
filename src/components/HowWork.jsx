@@ -5,7 +5,7 @@ import { MdAccountCircle } from "react-icons/md";
 
 const HowWork = () => {
     return (
-        <div className='py-16 bg-[#244034] text-white'>
+        <div className='py-16 bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900 text-white'>
             <div className='flex items-center justify-center gap-4'>
                 <h2 className='text-2xl md:text-4xl font-semibold uppercase'>How it’s work?</h2>
                 <img className='w-16' src={work} alt="" />

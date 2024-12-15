@@ -1,11 +1,24 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import JobCard from './JobCard';
+import { Link } from 'react-router';
+import work from '../assets/work.svg'
 const TabCatefories = ({ jobs }) => {
     console.log(jobs)
     return (
         <Tabs>
-            <div className='container mx-auto py-16'>
+            <div className='container mx-auto pb-16 pt-8'>
+                <div className="mb-8">
+                    <div className="flex items-center gap-3 justify-center">
+                        <h2 className="text-3xl font-medium">Most Demanding Categories.</h2>
+                        <div className="">
+                            <img className="w-16 mb-4 " src={work} alt="" />
+                        </div>
+                    </div>
+                    <div className="">
+                        <p className="text-xl text-center">Together with useful notifications, collaboration, insights, and improvement tip lorem etc.</p>
+                    </div>
+                </div>
                 <div className='flex justify-center items-center mb-12'>
                     <TabList>
                         <Tab>Image Annotation</Tab>
