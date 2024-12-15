@@ -75,6 +75,7 @@ const Header = () => {
                                 <li><a>Dashboard</a></li>
                                 <li><a>Settings</a></li>
                                 <li><Link to={'/postajob'}>Add New Job</Link></li>
+                                <li><Link to={'/mypostedjobs'}>My Posted Jobs</Link></li>
                                 <li><button onClick={handleSSignOut}>Logout</button></li>
                             </ul>
                         </div> :

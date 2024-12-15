@@ -10,6 +10,7 @@ import Jobs from "../pages/Jobs";
 import Contact from "../pages/Contact";
 import PostAJob from "../pages/PostAJob";
 import JobDetails from "../pages/JobDetails";
+import MyPostedJobs from "../pages/MyPostedJobs";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
             {
                 path: '/postajob',
                 element: <PostAJob></PostAJob>
+            },
+            {
+                path: '/mypostedjobs',
+                element: <MyPostedJobs></MyPostedJobs>
             }
         ]
     },
