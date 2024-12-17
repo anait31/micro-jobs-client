@@ -12,7 +12,7 @@ const firebaseConfig = {
     storageBucket: "micro-jobs-auth.firebasestorage.app",
     messagingSenderId: "201218394718",
     appId: "1:201218394718:web:1d26a164ff1a1c898ec2cf"
-};
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

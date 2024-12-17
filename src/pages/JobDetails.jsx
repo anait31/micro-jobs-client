@@ -54,10 +54,10 @@ const JobDetails = () => {
 
                         <div className="mt-4">
                             <h3>Buyer Details</h3>
-                            <p className="mx-1 text-xs text-gray-600 dark:text-gray-300">Name: Example</p>
-                            <p className="mx-1 text-xs text-gray-600 dark:text-gray-300">Email: {buyer_email}</p>
+                            {/* <p className="mx-1 text-xs text-gray-600 dark:text-gray-300">Name: {user.name} </p> */}
+                            <p className="mx-1 text-sm text-gray-600 dark:text-gray-300">Email: {buyer_email}</p>
                         </div>
-                        <h3>Price: {price}</h3>
+                        <h3>Price: {price}$</h3>
                     </div>
                 </div>
             </div>

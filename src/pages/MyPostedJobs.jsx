@@ -6,16 +6,14 @@ const MyPostedJobs = () => {
 
     useEffect(() => {
         fetch(`http://localhost:5000/jobs/${user?.email}`)
+            .then(res => res.json())
             .then(data => {
                 console.log(data)
-            })
-            .catch(error => {
-                console.log(error.message)
             })
     }, [])
 
     return (
-        <div className="bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900">
+        <div className="">
             <div className="container mx-auto py-12 min-h-[calc(100vh-288px)]">
                 {/* <h2>My Posted Jobs</h2> */}
                 <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
