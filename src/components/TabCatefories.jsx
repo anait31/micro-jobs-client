@@ -19,7 +19,7 @@ const TabCatefories = ({ jobs }) => {
                         <p className="text-xl text-center">Together with useful notifications, collaboration, insights, and improvement tip lorem etc.</p>
                     </div>
                 </div>
-                <div className='flex justify-center items-center mb-12'>
+                {/* <div className='flex justify-center items-center mb-12'>
                     <TabList>
                         <Tab>Image Annotation</Tab>
                         <Tab>Video Transcription</Tab>
@@ -30,9 +30,9 @@ const TabCatefories = ({ jobs }) => {
                         <Tab>Dresses Classification</Tab>
                         <Tab>Audio Transcription</Tab>
                     </TabList>
-                </div>
+                </div> */}
 
-                <TabPanel>
+                {/* <TabPanel>
                     <div className='grid grid-cols-4 gap-8'>
                         {
                             jobs.filter(j => j.category === "Image Annotation").map(job => <JobCard key={job._id} job={job}></JobCard>)
@@ -93,7 +93,7 @@ const TabCatefories = ({ jobs }) => {
                             jobs.filter(j => j.category === "Audio Transcription").map(job => <JobCard key={job._id} job={job}></JobCard>)
                         }
                     </div>
-                </TabPanel>
+                </TabPanel> */}
             </div>
         </Tabs>
     );
